@@ -1,193 +1,160 @@
+:root {
+  --color-primary: hsl(245, 75%, 52%);
+  --color-primary-hover: hsl(245, 83%, 68%);
+  --color-bg: hsl(225, 100%, 94%);
+  --color-text-muted: hsl(224, 23%, 55%);
+  --color-heading: hsl(223, 47%, 23%);
+  --color-bg-plan: hsl(240, 100%, 99%);
+  --radius: 10px;
+}
+
 html {
-  background-color: hsl(225, 100%, 94%);
+  background-color: var(--color-bg);
 }
 
 body {
   background-image: url(./images/pattern-background-desktop.svg);
   background-repeat: no-repeat;
+  background-size: 100% auto;
   font-family: 'Red Hat Display', sans-serif;
   font-size: 16px; 
   font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-}
-
-a {
-  cursor: url("./images/fa7-regular--hand-pointer.svg"), auto;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 p {
-  color: hsl(224, 23%, 55%); 
+  color: var(--color-text-muted); 
+}
+
+h1 {
+  color: var(--color-heading);
 }
 
 .container {
   background-color: white;
-  border: 1px solid hsl(225, 100%, 94%);
+  border: 1px solid var(--color-bg);
   display: flex;
   flex-direction: column; 
   text-align: center;
   border-radius: 25px;
-  width: 320px;
-  height: 650px;
-  padding: 0 40px;
+  width: 100%;
+  max-width: 450px;
+  padding: 0;
   overflow: hidden;
   box-shadow: 0px 15px 40px -20px rgba(224, 41, 224, 0.55);
+  background-size: 100% auto;
 }
 
-figure {
-  margin: 0;
+.hero {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-#image {
-  width: 400px;
-  margin: 0;
-  margin-left: -40px;
-} 
+article {
+  padding: 0 48px 48px;
+}
 
 .text {
   margin: 16px 12px;
+}
+
+p.text {
+  line-height: 1.5;
 }
 
 h1.text {
   font-size: 1.5em;
   font-weight: 900;
   padding-top: 20px;
-  margin: 16.080px
+  margin-top: 10px;
 }
 
 .plan {
-  background-color: #F9F9FF;
+  background-color: var(--color-bg-plan);
   padding: 15px;
   margin-bottom: 30px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   display: flex;
-  gap: 15px;
+  gap: 16px;
   align-items: center; 
-  justify-content: space-between;
-}
-
-.plan img {
-  float: left;
-  height: 45px;
-  padding: 5px;
 }
 
 .plan span {
-  color: black;
-  font-weight: 900; 
+  color: black; 
 }
 
 .plan p {
-  margin-left: -60px;
-  font-weight: 900;
-}
-
-span p {
+  margin: 0 auto 0 0;
+  text-align: left;
   font-weight: 900;
 }
 
 .plan a {
   font-size: 0.9em;
   font-weight: 900; 
-  color: hsl(245, 75%, 52%);
+  color: var(--color-primary);
   padding-right: 5px;
 }
 
 .plan a:hover {
   text-decoration: none;
-  color: 	#766CF1;
+  color: 	var(--color-primary-hover);
 }
 
-.plan a:focus {
-  text-decoration: none;
-  color: 	#766CF1;
-  outline: none;
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-section > a {
-  display: block;
-  text-decoration: none;
-  background-color: hsl(245, 75%, 52%);
-  font-weight: 800;
-  color: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 10px 10px 10px rgba(224, 232, 255, 0.75);
-  border: 1px solid hsl(223, 47%, 23%);
-}
-
-section > a:hover {
-  background-color:	#766CF1;
-  border: 1px solid hsl(245, 75%, 52%);
-}
-
-section > a:focus {
-  background-color:	#766CF1;
-  outline: none;
-}
-
-.cancel-button {
-  margin-top: 30px; 
-}
-
-.cancel-button a {
-  text-decoration: none;
+.btn  {
+  font: inherit;
   font-weight: 900;
-  color: #7C7F97;
+  border: none;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: var(--radius);
 }
 
-.cancel-button a:hover {
-  color: black;
+.btn--primary {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 20px 20px -10px hsla(245, 75%, 52%, 0.35);
 }
 
-.cancel-button a:focus {
-  color: black;
-  outline: none;
+.btn--primary:hover {
+  background-color: var(--color-primary-hover);
 }
 
-@media (max-width: 450px) {
+.btn--secondary {
+  background: none;
+  color: var(--color-text-muted);
+}
+
+.btn--secondary:hover {
+  color: var(--color-heading);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
   body {
-    background-image: none;
+    background-image: url(./images/pattern-background-mobile.svg);   
   }
 
-  .container {
-    width: 270px;
-    height: 570px;
-    padding: 0 25px;
-    font-size: 0.9em;
-  }
-
-  #image {
-    width: 320px;
-    height: 160px;
-    margin-left: -25px;
-  }
-
-  .text {
-    margin: 0px 10px;
-    margin-bottom: 10px;
-  }
-
-  .text p {
-    line-height: 150%;
-  }
-
-  .text h1 {
-    margin-top: 10px;
-  }
-
-  .plan {
-    margin-bottom: 25px;
-    padding: 5px 10px;
-    padding-bottom: 10px;
-  }
-
-  .plan p {
-    margin-left: -25px;
-    font-weight: 700;
+  article {
+    padding: 0 24px 24px;
   }
 
 }
