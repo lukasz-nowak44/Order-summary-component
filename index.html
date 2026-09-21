@@ -12,10 +12,6 @@
   
   <title>Frontend Mentor | Order summary card</title>
 
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 
 <body>
@@ -24,9 +20,7 @@
 
     <div class="container">
 
-      <figure>
-        <img src="./images/illustration-hero.svg" alt="a dancing man with headphones connected to phone" id="image" />
-      </figure>
+      <img src="./images/illustration-hero.svg" alt="" class="hero" />
 
       <article>
 
@@ -40,27 +34,26 @@
         <section>
 
           <div class="plan">
-            <figure>
-              <img src="./images/icon-music.svg" alt="a muscial note" />
-            </figure>
+
+            <img src="./images/icon-music.svg" alt="" />
 
             <p><span>Annual Plan</span><br />
             $59.99/year</p>
 
-            <a href="#" alt="change plan">Change</a>
+            <a href="#" aria-label="Change plan">Change</a>
           </div>
 
         </section>
 
-        <section>
+        <section class="actions">
 
-          <a href="#"><div class="proceed-button">
+          <button type="button" class="btn btn--primary">
             Proceed to Payment
-          </div></a>
+          </button>
 
-          <div class="cancel-button">
-            <a href="#">Cancel Order</a>
-          </div>
+          <button type="button" class="btn btn--secondary">
+            Cancel Order
+          </button>
           
         </section>
 
